@@ -275,6 +275,7 @@ name = "api-shuttle"
 version = "0.1.0"
 dependencies = [
  "actix-web",
+ "api-lib",
  "shuttle-actix-web",
  "shuttle-runtime",
  "tokio",

@@ -3,6 +3,14 @@ name = "shared"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+backend = ["sqlx"]
 
 [dependencies]
+# serde
+serde = { workspace = true }
+# Sqlx, only when the backend add this as dependency is compiled
+sqlx = { workspace = true, optional = true }
+# utils
+uuid = { workspace = true }
+chrono = { workspace = true }

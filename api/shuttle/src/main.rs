@@ -35,5 +35,5 @@ async fn actix_web(
         cfg.app_data(pool).service(hello_world).service(version);
     };
 
-    Ok(config.into())
+    Ok(config.into()) 
 }

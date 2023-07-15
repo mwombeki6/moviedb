@@ -10,7 +10,7 @@ async fn hello_world() -> &'static str {
 
 #[get("/version")]
 async fn version() -> &'static str {
-    "Beta"
+    "Beta\r\n"
 }
 
 #[shuttle_runtime::main]
@@ -22,8 +22,10 @@ async fn actix_web(
         .await
         .map_err(CustomError::new)?;
 
+    let pool = actix_web::web::Data::new(pool);
+
     let config = move |cfg: &mut ServiceConfig| {
-        cfg.service(hello_world).service(version);
+        cfg.app_data(pool).service(hello_world).service(version);
     };
 
     Ok(config.into())

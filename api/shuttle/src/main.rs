@@ -8,6 +8,11 @@ async fn hello_world() -> &'static str {
     "Hello World!"
 }
 
+#[get("/version")]
+async fn version() -> &'static str {
+    "Beta"
+}
+
 #[shuttle_runtime::main]
 async fn actix_web(
     #[shuttle_shared_db::Postgres()] pool: sqlx::PgPool,
@@ -18,7 +23,7 @@ async fn actix_web(
         .map_err(CustomError::new)?;
 
     let config = move |cfg: &mut ServiceConfig| {
-        cfg.service(hello_world);
+        cfg.service(hello_world).service(version);
     };
 
     Ok(config.into())

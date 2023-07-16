@@ -8,6 +8,7 @@ actix-web = { workspace = true }
 shuttle-actix-web = "0.21.0"
 shuttle-runtime = "0.21.0"
 tokio = "1.29.1"
+tracing = "0.1"
 api-lib = { workspace = true }
 shuttle-shared-db = { version = "0.21.0", features = ["postgres"] }
 sqlx = { version = "0.6.3", default-features = false, features = [ "runtime-actix-native-tls", "macros", "postgres", "uuid", "chrono", "json" ] }

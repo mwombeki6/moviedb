@@ -9,6 +9,7 @@ async fn hello_world() -> &'static str {
 async fn health() -> HttpResponse {
     HttpResponse::Ok()
         .append_header(("version", "0.0.1"))
+        .append_header(("thankyou", "welcome on board again"))
         .finish()
 }
 

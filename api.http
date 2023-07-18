@@ -1,6 +1,7 @@
 #https://mwombeki-moviedb.shuttleapp.rs
+#http://localhost:8000
 
-@host = http://localhost:8000
+@host =  https://mwombeki-moviedb.shuttleapp.rs
 @film_id = 6f05e5f2-133c-11ee-be9f-0ab7e0d8c876
 
 ### health

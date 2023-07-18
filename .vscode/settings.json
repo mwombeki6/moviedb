@@ -1,5 +1,6 @@
 {
     "rust-analyzer.linkedProjects": [
-        "./api/lib/Cargo.toml"
+        "./api/lib/Cargo.toml",
+        "./shared/Cargo.toml"
     ]
 }

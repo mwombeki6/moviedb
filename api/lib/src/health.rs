@@ -1,16 +1,19 @@
-use actix_web::{get, HttpResponse};
+use actix_web::{get, web::{ServiceConfig, self}, HttpResponse};
 
-#[get("/")]
-async fn hello_world() -> &'static str {
-    "Hello World!"
+pub fn service(cfg: &mut ServiceConfig) {
+    cfg.route("/health", web::get().to(health));
 }
 
-#[get("health")]
 async fn health() -> HttpResponse {
     HttpResponse::Ok()
         .append_header(("version", "0.0.1"))
         .append_header(("thankyou", "welcome on board again"))
         .finish()
+}
+
+#[get("/")]
+async fn hello_world() -> &'static str {
+    "Hello World!"
 }
 
 #[tracing::instrument]

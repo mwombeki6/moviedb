@@ -1,3 +1,3 @@
 pub mod film_repository;
-pub mod films;
+pub mod v1;
 pub mod health;
